@@ -12,14 +12,15 @@ const Apps = [
 
 const Sidebar = () => {
 	return (
-		<div className="w-16 bg-gray-800 text-white p-0 h-full grid grid-rows-[auto,1fr,auto]">
-			<div className="top text-center py-2">
+		<div className="w-20 text-white mx-2 p-0 grid grid-rows-[auto,1fr,auto]">
+			<div className="text-center py-2">
 				<h3>Szyfr</h3>
 			</div>
-			<div className="mid overflow-y-auto">
+			<div className="overflow-y-auto overflow-x-hidden">
 				<ul>
 					{Apps.map((app) => (
-						<li key={app.id} className="mb-4">
+						<li key={app.id} className="mb-4 flex justify-center items-center">
+							{app.name}
 							<NavLink
 								to={'/' + app.name}
 								className="inline-block p-2 border border-gray-300 rounded-full bg-gray-200 text-gray-700 hover:border-radius-4px active:bg-yellow-200"
@@ -30,7 +31,7 @@ const Sidebar = () => {
 					))}
 				</ul>
 			</div>
-			<div className="bot text-center">
+			<div className="text-center">
 				<button
 					onClick={() => console.log('Button clicked')}
 					className="p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
