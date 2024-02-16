@@ -20,13 +20,13 @@ const Sidebar = () => {
 				<ul>
 					{Apps.map((app) => (
 						<li key={app.id} className="mb-4 flex justify-center items-center">
-							{app.name}
 							<NavLink
 								to={'/' + app.name}
 								className="inline-block p-2 border border-gray-300 rounded-full bg-gray-200 text-gray-700 hover:border-radius-4px active:bg-yellow-200"
 							>
 								{app.icon}
 							</NavLink>
+							<span className="ml-2">{app.name}</span>
 						</li>
 					))}
 				</ul>
@@ -35,6 +35,7 @@ const Sidebar = () => {
 				<button
 					onClick={() => console.log('Button clicked')}
 					className="p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+					title="Click me"
 				>
 					Button
 				</button>
