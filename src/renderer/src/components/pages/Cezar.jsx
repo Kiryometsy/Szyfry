@@ -22,7 +22,6 @@ const Cezar = () => {
 		}
 
 		document.querySelector('input[name="workedOne"]').value = result
-		document.querySelector('input[name="keySec"]').value = key
 	}
 
 	function Deszyfrowanie() {
@@ -61,12 +60,12 @@ const Cezar = () => {
 		<div className="m-3">
 			<div className="grid grid-cols-2 grid-rows-2 gap-4 h-screen p-4">
 				<div className="bg-blue-200 items-center justify-center text-2xl p-6 grid grid-rows-3 font-bold rounded-lg row-start-1">
-					<label className="block mb-2 align-top text-sm font-medium text-gray-900 dark:text-white row-start-1">
+					<label className="block mb-2 align-top text-2xl font-bold text-gray-900 dark:text-white row-start-1">
 						Message
 					</label>
 					<input type="text" name="keyOne" className="row-start-1 " />
 
-					<label className="block mb-2 align-top text-sm font-medium text-gray-900 dark:text-white row-start-2">
+					<label className="block mb-2 align-top text-2xl font-bold text-gray-900 dark:text-white row-start-2">
 						Encrypted Message
 					</label>
 					<input type="text" name="workedOne" className="row-start-2 " />
@@ -77,17 +76,17 @@ const Cezar = () => {
 						id="Encrpyt"
 						className="p-2 bg-blue-500 text-white rounded-md hover:bg-blue-900 row-start-3 col-span-2"
 					>
-						Szyfruj
+						Encode Message
 					</button>
 				</div>
 
 				<div className="bg-green-200 items-center justify-center text-2xl p-6 grid grid-rows-3 font-bold rounded-lg row-start-2">
-					<label className="block mb-2 align-top text-sm font-medium text-gray-900 dark:text-white row-start-1">
+					<label className="block mb-2 align-top text-2xl font-bold text-gray-900 dark:text-white row-start-1">
 						Encrypted Message
 					</label>
 					<input type="text" name="keyTwo" className="row-start-1 " />
 
-					<label className="block mb-2 align-top text-sm font-medium text-gray-900 dark:text-white row-start-2">
+					<label className="block mb-2 align-top text-2xl font-bold text-gray-900 dark:text-white row-start-2">
 						Decrypted Message
 					</label>
 					<input type="text" name="workedTwo" className="row-start-2 " />
@@ -98,19 +97,19 @@ const Cezar = () => {
 						id="Encrpyt"
 						className="p-2 bg-blue-500 text-white rounded-md hover:bg-blue-900 row-start-3 col-span-2"
 					>
-						Szyfruj
+						Decode Message
 					</button>
 				</div>
 
 				<div className="bg-yellow-200 items-center justify-center text-2xl font-bold rounded-lg p-6 row-span-2 col-start-2 row-start-1 grid grid-cols-2 grid-rows-2 ">
 					<label
-						for="steps-range"
-						className="block mb-2 text-sm font-medium text-gray-900 dark:text-white row-start-1"
+						htmlFor="steps-range"
+						className="block mb-2 text-2xl font-bold text-gray-900 dark:text-white row-start-1"
 					>
 						Klucz
 					</label>
 
-					<input readonly name="keyValue" className="row-start-1" />
+					<input readOnly name="keyValue" className="row-start-1" />
 
 					<input
 						name="Key"
