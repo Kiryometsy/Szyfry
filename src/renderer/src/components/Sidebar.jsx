@@ -61,15 +61,6 @@ const Sidebar = () => {
 					{tooltipText}
 				</span>
 			)}
-			<div className="text-center">
-				<button
-					onClick={() => console.log('Button clicked')}
-					className="p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
-					title="Click me"
-				>
-					Button
-				</button>
-			</div>
 		</div>
 	)
 }

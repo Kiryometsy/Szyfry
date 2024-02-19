@@ -4,7 +4,7 @@ let resultMessage = ''
 
 // Function to perform Trithemius encoding or decoding
 const performTrithemius = (message, encode = true) => {
-	const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+	const alphabet = 'AĄBCĆDEĘFGHIJKLŁMNŃOÓPQRSŚTUVWXYZŹŻ'
 	let resultMessage = ''
 
 	message = message.replace(/\s/g, '')
@@ -31,7 +31,7 @@ const performTrithemius = (message, encode = true) => {
 
 // Function to generate the Tabula Recta
 const generateTabulaRecta = () => {
-	const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+	const alphabet = 'AĄBCĆDEĘFGHIJKLŁMNŃOÓPQRSŚTUVWXYZŹŻ'
 	const tabulaRecta = []
 
 	for (let i = 0; i < alphabet.length; i++) {

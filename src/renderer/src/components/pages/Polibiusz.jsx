@@ -71,6 +71,9 @@ const Polibiusz = () => {
 
 	function Decryption() {
 		let code = document.querySelector('input[name="keyTwo"]').value.toLowerCase()
+		if (code.length % 2 != 0) {
+			code += '1'
+		}
 		code = SecEncryption(code)
 		let uncode = ''
 
@@ -81,7 +84,13 @@ const Polibiusz = () => {
 			let index = i * 2
 			let ind1 = parseInt(code[index]) - 1
 			let ind2 = parseInt(code[index + 1]) - 1
-			console.log(ind1)
+
+			if (ind1 < 0 || ind1 > 4) {
+				ind1 = 0
+			}
+			if (ind2 < 0 || ind2 > 6) {
+				ind2 = 0
+			}
 			uncode += jagged[ind1][ind2][0]
 		}
 
@@ -110,11 +119,11 @@ const Polibiusz = () => {
 		<div className="m-3">
 			<div className="grid grid-cols-2 grid-rows-2 gap-4 h-screen p-4">
 				<div className="bg-blue-200 items-center justify-center text-2xl p-6 grid grid-rows-3 font-bold rounded-lg row-start-1">
-					<label className="block mb-2 align-top text-sm font-medium text-gray-900 dark:text-white row-start-1">
+					<label className="block mb-2 align-top text-2xl font-bold text-gray-900 dark:text-white row-start-1">
 						Message
 					</label>
 					<input type="text" name="keyOne" className="row-start-1 " />
-					<label className="block mb-2 align-top text-sm font-medium text-gray-900 dark:text-white row-start-2">
+					<label className="block mb-2 align-top text-2xl font-bold text-gray-900 dark:text-white row-start-2">
 						Encrypted Message
 					</label>
 					<input type="text" name="workedOne" className="row-start-2 " />
@@ -124,16 +133,16 @@ const Polibiusz = () => {
 						id="Encrpyt"
 						className="p-2 bg-blue-500 text-white rounded-md hover:bg-blue-900 row-start-3 col-span-2"
 					>
-						Szyfruj
+						Encode Message
 					</button>
 				</div>
 				<div className="bg-green-200 items-center justify-center text-2xl p-6 grid grid-rows-3 font-bold rounded-lg row-start-2">
-					<label className="block mb-2 align-top text-sm font-medium text-gray-900 dark:text-white row-start-1">
+					<label className="block mb-2 align-top text-2xl font-bold text-gray-900 dark:text-white row-start-1">
 						Encrypted Message
 					</label>
-					<input type="text" name="keyTwo" className="row-start-1 " />
+					<input type="number" name="keyTwo" className="row-start-1 " />
 
-					<label className="block mb-2 align-top text-sm font-medium text-gray-900 dark:text-white row-start-2">
+					<label className="block mb-2 align-top text-2xl font-bold text-gray-900 dark:text-white row-start-2">
 						Decrypted Message
 					</label>
 					<input type="text" name="workedTwo" className="row-start-2 " />
@@ -144,13 +153,13 @@ const Polibiusz = () => {
 						id="Encrpyt"
 						className="p-2 bg-blue-500 text-white rounded-md hover:bg-blue-900 row-start-3 col-span-2"
 					>
-						Szyfruj
+						Decode Message
 					</button>
 				</div>
 				<div className="bg-yellow-200 items-center justify-center text-2xl font-bold rounded-lg p-6 row-span-2 col-start-2 row-start-1 grid grid-cols-3 grid-rows-2 ">
 					<label
 						htmlFor="steps-range"
-						className="block mb-2 text-sm font-medium text-gray-900 dark:text-white row-start-1"
+						className="block mb-2 text-2xl font-bold text-gray-900 dark:text-white row-start-1"
 					>
 						Klucz
 					</label>
